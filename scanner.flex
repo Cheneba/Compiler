@@ -59,6 +59,6 @@ IDENTIFIER [a-zA-Z_][a-zA-Z0-9_]{0,31}
 
 
 ";"     { return TOKEN_EOL; } /* END OF LINE (SEMI-COLON) */
-.       
+.   
 %%
 int yywrap() { return 1; }
