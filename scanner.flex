@@ -53,7 +53,7 @@ IDENTIFIER [a-zA-Z_][a-zA-Z0-9_]{0,31}
 
 \"(\\.|[^"\\])*\"  { return TOKEN_STRING; }  /* STRING LITERALS HERE */
 
-"#".*          { printf("Line: %d\n",yylineno); }/* preprocessors skip here : { printf("Skipped preprocessor definitons: Line %d\n", yylineno);}  try and understand how to link the input code line to here or something*/
+"#".*          { printf("Line: %d\n",yylineno); }/* preprocessors skip here : try and understand how to link the input code line to here or something*/
 
 {DIGIT}+        { return TOKEN_NUMBER; }  /* NUMBERS(+VE/-VE) here */
 
