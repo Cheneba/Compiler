@@ -1,12 +1,8 @@
 %{
 #include "token.h"
 #include <stdio.h>
-
-int yylineno = 1;
 %}
 
-// Rules for Identifiers, numbers, etc
-%option noyywrap
 DIGIT [+-]?([0-9]{1,12}(\.[0-9]{1,12})?|(\.[0-9]{1,12}))
 IDENTIFIER [a-zA-Z_][a-zA-Z0-9_]{0,31}
 
@@ -57,7 +53,7 @@ IDENTIFIER [a-zA-Z_][a-zA-Z0-9_]{0,31}
 
 \"(\\.|[^"\\])*\"  { return TOKEN_STRING; }  /* STRING LITERALS HERE */
 
-"#".*          /* preprocessors skip here : { printf("Skipped preprocessor definitons: Line %d\n", yylineno);}  try and understand how to link the input code line to here or something*/
+"#".*          { printf("Line: %d\n",yylineno); }/* preprocessors skip here : { printf("Skipped preprocessor definitons: Line %d\n", yylineno);}  try and understand how to link the input code line to here or something*/
 
 {DIGIT}+        { return TOKEN_NUMBER; }  /* NUMBERS(+VE/-VE) here */
 

@@ -1,5 +1,5 @@
 // Arithmetic Operators
-/*
+
 int a = 5 + 10;
 float b = a - 2.5;
 double c = b * 3.14 / 2;

@@ -6,7 +6,7 @@ extern int yylex();
 extern char *yytext;
 
 int main() {
-    yyin = fopen("program.c","r");
+    yyin = fopen("program1.c","r");
     if(!yyin) 
     {
         printf("could not open program.c!\n");
